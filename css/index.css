@@ -1,0 +1,184 @@
+#app-musicBox {
+  width: 100vw;
+  height: 100vh;
+  background: url("../imgs/bg1.jpg") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --themeColor: #cb89a5;
+}
+@keyframes running {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#app-musicBox .hidden {
+  display: none;
+}
+#app-musicBox .app-musicBox-box {
+  width: 800px;
+  height: 600px;
+  border: 1px solid var(--themeColor);
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-searchBar {
+  width: 100%;
+  height: 60px;
+  background-color: var(--themeColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-searchBar .searchBar-left {
+  color: white;
+  font-weight: 200;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-searchBar .searchBar-right input {
+  width: 300px;
+  height: 30px;
+  border: 0px;
+  border-radius: 20px;
+  text-indent: 15px;
+  background: url("../imgs/zoom.png") 270px center no-repeat white;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content {
+  width: 100%;
+  height: 480px;
+  display: flex;
+  border-bottom: 1px dashed var(--themeColor);
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-left {
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid var(--themeColor);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-left .musicItem {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-left .musicItem .musicItem-audioPlay {
+  width: 25px;
+  height: 25px;
+  background: url("../imgs/table.png") -18px -18px;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-left .musicItem .musicItem-musicName {
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  width: 145px;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-left .musicItem .musicItem-videoPlay {
+  width: 30px;
+  height: 20px;
+  background: url(../imgs/table.png) left -45px;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-left .musicItem:nth-of-type(odd) {
+  background-color: rgba(224, 217, 217, 0.5);
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-middle {
+  width: 400px;
+  height: 100%;
+  border-right: 1px solid var(--themeColor);
+  position: relative;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-middle .player-bar {
+  left: 200px;
+  position: absolute;
+  z-index: 8;
+  transform: rotate(-25deg);
+  transform-origin: 12px 12px;
+  transition: all 2s;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-middle .playing {
+  transform: rotate(0deg);
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-middle .cover {
+  top: 156px;
+  left: 156px;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-middle .disc {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-middle .rotate {
+  animation-name: running;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-right {
+  width: 200px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-right .CommentsItem {
+  display: flex;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-right .CommentsItem .content-right-img img {
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-right .CommentsItem .content-right-text .uesrname {
+  font-size: 16px;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-content .content-right .CommentsItem .content-right-text .Comments {
+  font-size: 12px;
+  color: white;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-control {
+  width: 100%;
+  height: 60px;
+  background-color: #f1f3f4;
+}
+#app-musicBox .app-musicBox-box .app-musicBox-box-control audio {
+  width: 100%;
+  height: 100%;
+}
+#app-musicBox .mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+}
+#app-musicBox .mask .video.close {
+  position: absolute;
+  font-size: 50px;
+  top: 5px;
+  right: 20px;
+  color: white;
+}
+#app-musicBox .mask video {
+  width: 1000px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#app-musicBox .load {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
